@@ -37,6 +37,10 @@ python manage.py startapp "NOMBRE"
 ###Crear archivo ulrs.py en app. Agregar app a setting.py del proyecto (backend) en linea 36
 INSTALLED_APPS = [ ... "mi_app", ]
 
+###Crear carpeta templates fuera.
+###Modificar setting.py linea 61 "DIR":
+"DIRS": [BASE_DIR / "templates"],
+
 ###En urls.py del proyecto, agregar un archivo de rutas externo:
 linea 19 (agregar include): from django.urls import path, include 
 linea 23: path("mi_app/", include("mi_app.urls")),
@@ -46,8 +50,6 @@ from django.urls import path
 
 urlpatterns = [ "POR AGREGAR" ]
 
-###Modificar setting.py linea 61 "DIR":
-"DIRS": [BASE_DIR / "templates"],
 
 ##ACA COMENZAMOS A CREAR LAS VISTAS!
 ###modificar views.py de app agregando función:
@@ -58,7 +60,7 @@ from django.urls import path from .views import hola
 
 urlpatterns = [ path("hola/", hola) ]
 
-###Crear carpeta templates fuera.
+
 ###Crear un archivo hola.html
 
 
